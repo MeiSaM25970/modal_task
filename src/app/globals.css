@@ -2,32 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+
+.modal{
+  @apply fixed duration-300 transition-all
+}
+/* Hidden modal */
+.modal-top{
+  @apply -top-full 
+}
+.modal-bottom{
+  @apply -bottom-full 
+}
+.modal-left{
+  @apply -left-full 
+}
+.modal-right{
+  @apply -right-full 
+}
+/* CENTER MODAL */
+.modal-bottom,.modal-top{
+  @apply left-1/2 -translate-x-1/2
+}
+.modal-left,.modal-right{
+  @apply top-1/2 -translate-y-1/2
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Active Modal */
+.modal-top.active{
+  @apply top-1/2 -translate-y-1/2
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.modal-bottom.active{
+  @apply bottom-1/2  translate-y-1/2
+}
+.modal-left.active{
+  @apply left-1/2 -translate-x-1/2
+}
+.modal-right.active{
+  @apply right-1/2 translate-x-1/2
 }
