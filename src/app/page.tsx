@@ -1,5 +1,7 @@
 import Link from "next/link";
-import Modal from "./component/modal";
+
+import NavigateBack from "@/component/NavigateBack";
+import Modal from "./Modal";
 
 
 type SearchParamProps = {
@@ -8,15 +10,19 @@ type SearchParamProps = {
 
 export default function Page({ searchParams }: SearchParamProps) {
   const show = searchParams?.show;
-
+  console.log(show);
   return (
-    <div  className=" m-auto text-center rounded-sm text-white bg-blue-300 w-60 py-5">
-    <Link href="/?show=true" >
-       CLICK TO OPEN MODAL
+    <>
+      <Link
+        href="/?show=true"
+        className="flex justify-center  bg-blue-500 text-white text-base  py-3 px-3  font-medium rounded-md shadow-sm hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300 "
+      >
+        please, click to open the modal...
       </Link>
-      
 
-      {show && <Modal />}
-    </div>
+      <Modal isShow={show} mode="right">
+        <NavigateBack />
+      </Modal>
+    </>
   );
 }
