@@ -2,43 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-.modal{
-  @apply fixed duration-1000 transition-all
+.modal {
+  @apply fixed duration-1000 transition-all;
 }
 /* Hidden modal */
-.modal-top{
-  @apply -top-full 
+.modal-top {
+  @apply -top-full;
 }
-.modal-bottom{
-  @apply -bottom-full 
+.modal-bottom {
+  @apply -bottom-full;
 }
-.modal-left{
-  @apply -left-full 
+.modal-left {
+  @apply -left-full;
 }
-.modal-right{
-  @apply -right-full 
+.modal-right {
+  @apply -right-full;
 }
 /* CENTER MODAL */
-.modal-bottom,.modal-top{
-  @apply left-1/2 -translate-x-1/2
+.modal-bottom,
+.modal-top {
+  @apply left-1/2 -translate-x-1/2;
 }
-.modal-left,.modal-right{
-  @apply top-1/2 -translate-y-1/2
+.modal-left,
+.modal-right {
+  @apply top-1/2 -translate-y-1/2;
 }
-
 
 /* Active Modal */
-.modal-top.active{
-  @apply top-1/2 -translate-y-1/2
+.modal-top.active {
+  @apply top-1/2 -translate-y-1/2;
 }
-.modal-bottom.active{
-  @apply bottom-1/2  translate-y-1/2
+.modal-bottom.active {
+  @apply bottom-1/2  translate-y-1/2;
 }
-.modal-left.active{
-  @apply left-1/2 -translate-x-1/2
+.modal-left.active {
+  @apply left-1/2 -translate-x-1/2;
 }
-.modal-right.active{
-  @apply right-1/2 translate-x-1/2
+.modal-right.active {
+  @apply right-1/2 translate-x-1/2;
 }

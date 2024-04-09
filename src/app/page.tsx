@@ -1,15 +1,14 @@
 import Link from "next/link";
 
-import NavigateBack from "@/component/NavigateBack";
+import NavigateBack from "@/components/NavigateBack";
 import Modal from "./Modal";
-
 
 type SearchParamProps = {
   searchParams: Record<string, string> | null | undefined;
 };
 
 export default function Page({ searchParams }: SearchParamProps) {
-  const show = searchParams?.show;
+  const show = !!searchParams?.show;
   console.log(show);
   return (
     <>
@@ -20,7 +19,7 @@ export default function Page({ searchParams }: SearchParamProps) {
         please, click to open the modal...
       </Link>
 
-      <Modal isShow={show} mode="right">
+      <Modal isShow={show} mode="left">
         <NavigateBack />
       </Modal>
     </>
